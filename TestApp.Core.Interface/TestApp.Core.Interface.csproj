@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TestApp.Core.Entity\TestApp.Core.Entity.csproj" />
+    <ProjectReference Include="..\TestApp.Core.Model\TestApp.Core.Model.csproj" />
+  </ItemGroup>
+
+</Project>

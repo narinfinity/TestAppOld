@@ -1,0 +1,23 @@
+﻿@using Microsoft.AspNetCore.Authorization
+@using TestApp.Web.Models.Authorization.Requirement.Operation;
+
+@inject IAuthorizationService AuthorizationService
+@{
+    ViewData["Title"] = "Document";
+}
+<h2>@ViewData["Title"].</h2>
+<h3>@ViewData["Message"]</h3>
+
+<p>Use this area to provide additional information.</p>
+@if ((await AuthorizationService.AuthorizeAsync(User, "Over18")).Succeeded)
+{
+    <p>This paragraph is displayed because you fulfilled PolicyName.</p>
+}
+@if (await AuthorizationService.AuthorizeAsync(User, Model, CrudOperationRequirement.Update.Name).Succeeded)
+{
+    <p>
+        <a class="btn btn-default" role="button"
+           href="@Url.Action("Edit", "Document", new { id = Model.Id })">Edit</a>
+    </p>
+}
+

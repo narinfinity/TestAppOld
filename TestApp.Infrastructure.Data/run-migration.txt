@@ -1,0 +1,2 @@
+﻿Add-Migration "InitialCreate" -Verbose
+Update-Database -Verbose
